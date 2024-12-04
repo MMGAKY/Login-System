@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="login p-5" id="login">
+      <div class="container">
+        <div class="box w-75 p-5 m-auto">
+          <div class="container d-block" id="signIn">
+            <h1 class="text-center">Smart Login System</h1>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="checkEmailInput"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                oninput=""
+                type="password"
+                class="form-control"
+                id="checkPasswordInput"
+                placeholder="Enter your password"
+              />
+            </div>
+            <div class="text mb-4">
+              <p class="d-none" id="wrong">incorrect email or password</p>
+              <p class="d-none" id="null">All inputs is required</p>
+            </div>
+            <div class="button mt-4 mb-3">
+              <button
+                onclick="checkData()"
+                type="button"
+                class="btn btn-outline-info w-100"
+              >
+                Login
+              </button>
+            </div>
+            <div class="sign text-center text-white">
+              <p>
+                Don’t have an account?
+                <a href="#" onclick="signUpDisplay()">Sign Up</a>
+              </p>
+            </div>
+          </div>
+          <div class="container d-none" id="signUp">
+            <h1 class="text-center">Smart Login System</h1>
+            <div class="mb-3">
+              <input
+                oninput="validationName()"
+                type="text"
+                class="form-control"
+                id="nameInput"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                oninput="validationEmail()"
+                type="text"
+                class="form-control"
+                id="emailInput"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                oninput="validationPass()"
+                type="password"
+                class="form-control"
+                id="passwordInput"
+                placeholder="Enter your password"
+              />
+            </div>
+            <div class="text mb-4">
+              <p class="d-none" id="no">All inputs should be valid</p>
+              <p class="d-none" id="use">This email has already used</p>
+              <p class="text-success d-none" id="yes">Success</p>
+            </div>
+            <div class="button mt-4 mb-3">
+              <button
+                onclick="addEmail()"
+                type="button"
+                class="btn btn-outline-info w-100"
+              >
+                Sign Up
+              </button>
+            </div>
+            <div class="sign text-center text-white">
+              <p>
+                You have an account?
+                <a href="#" onclick="signInDisplay()">Sign In</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home d-none" id="home">
+      <div class="container h-100 d-flex justify-content-center align-items-center">
+        <div class="cont w-75" id="msg">
+        </div>
+      </div>
+      <nav class="navbar fixed-top">
+        <div class="container">
+          <a class="navbar-brand text-white ms-3">SMART LOGIN</a>
+          <form class="d-flex">
+            <button onclick="logOut()" class="btn btn-outline-warning" type="submit">Log Out</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
